@@ -395,6 +395,16 @@ type MemoryStats struct {
 
 	Failcnt uint64 `json:"failcnt"`
 
+	// Size of kernel memory allocated in bytes.
+	// Units: Bytes.
+	KernelUsage uint64 `json:"kernel"`
+
+	// [!]: fork additions
+	ActiveAnon   uint64 `json:"active_anon,omitempty"`
+	InactiveAnon uint64 `json:"inactive_anon,omitempty"`
+	ActiveFile   uint64 `json:"active_file,omitempty"`
+	InactiveFile uint64 `json:"inactive_file,omitempty"`
+
 	ContainerData    MemoryStatsMemoryData `json:"container_data,omitempty"`
 	HierarchicalData MemoryStatsMemoryData `json:"hierarchical_data,omitempty"`
 }
